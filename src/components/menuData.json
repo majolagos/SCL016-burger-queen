@@ -1,0 +1,95 @@
+[
+    {
+      "id": "b1",
+      "title": "Espresso",
+      "description": "Shot de café",
+      "image": "../images/menu/bebestibles/espresso.png",
+      "price": 990,
+      "type": "drinkables"
+    },
+    {
+      "id": "b2",
+      "title": "Latte",
+      "description": "Café, leche, espuma y sabor a elección.",
+      "image": "../images/menu/bebestibles/latte.png",
+      "price": 1490,
+      "type": "drinkables"
+    },
+    {
+      "id": "b3",
+      "title": "Capuccino",
+      "description": "Café, leche y espuma.",
+      "image": "../images/menu/bebestibles/capuccino.png",
+      "price": 1490,
+      "type": "drinkables"
+    },
+    {
+      "id": "b4",
+      "title": "Americano",
+      "description": "Café sólo",
+      "image": "../images/menu/bebestibles/americano.png",
+      "price": 990,
+      "type": "drinkables"
+    },
+    {
+      "id": "s1",
+      "title": "Aliado jamón queso",
+      "description": "Sándwich miga o croissant relleno con jamón o jamón de pavo y queso fundido.",
+      "image": "../images/menu/salado/aliado-jamon-queso.png",
+      "price": 990,
+      "type": "salty"
+    }, {
+      "id": "s2",
+      "title": "Sándwich ave palta",
+      "description": "Láminas de pollo a la plancha, palta y mayonesa en pan de miga italiano.",
+      "image": "../images/menu/salado/ave-palta.png",
+      "price": 1490,
+      "type": "salty"
+    }, {
+      "id": "s3",
+      "title": "Sándwich pollo italiano",
+      "description": "Sándwich láminas de pechuga de pollo, trozos de tomate, palta y un toque de mayonesa en pan ciabatta.",
+      "image": "../images/menu/salado/pollo-italiano.png",
+      "price": 1490,
+      "type": "salty"
+    }, {
+      "id": "s4",
+      "title": "Salmón Rúcula",
+      "description": "Sándwich con láminas de salmón ahumado, queso crema, palta, rúcula y berros en pan ciabatta.",
+      "image": "../images/menu/salado/salmon-rucula.png",
+      "price": 1990,
+      "type": "salty"
+    },
+    {
+      "id": "d1",
+      "title": "Trozo de torta",
+      "description": "Bizcocho y relleno según disponibilidad.",
+      "image": "../images/menu/dulce/trozo-torta.png",
+      "price": 1490,
+      "type": "sweet"
+    }, {
+      "id": "d2",
+      "title": "Trozo de Kuchen",
+      "description": "Masa y relleno según disponibilidad.",
+      "image": "../images/menu/dulce/trozo-kuchen.png",
+      "price": 1490,
+      "type": "sweet"
+    }, {
+      "id": "d3",
+      "title": "Trozo de Cheesecake",
+      "description": "Tarta de queso con cobertura según disponibilidad.",
+      "image": "../images/menu/dulce/trozo-cheesecake.png",
+      "price": 1490,
+      "type": "sweet"
+    }, {
+      "id": "d4",
+      "title": "Muffin",
+      "description": "Bizchocho relleno, sabor según disponibilidad.",
+      "image": "../images/menu/dulce/mufin.png",
+      "price": 990,
+      "type": "sweet"
+    }
+
+    
+  ]
+        

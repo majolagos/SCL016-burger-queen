@@ -3,7 +3,7 @@
       "id": "b1",
       "title": "Espresso",
       "description": "Shot de café",
-      "image": "../images/menu/bebestibles/espresso.png",
+      "image": "https://firebasestorage.googleapis.com/v0/b/miau-cofee.appspot.com/o/bebestibles%2Fespresso.png?alt=media&token=3becd624-7661-4c2b-9a1a-6122d2ba41e8",
       "price": 990,
       "type": "drinkables"
     },
@@ -11,7 +11,7 @@
       "id": "b2",
       "title": "Latte",
       "description": "Café, leche, espuma y sabor a elección.",
-      "image": "../images/menu/bebestibles/latte.png",
+      "image": "https://firebasestorage.googleapis.com/v0/b/miau-cofee.appspot.com/o/bebestibles%2Flatte.png?alt=media&token=963b2c8c-3e78-450c-b342-24ad68c63f19",
       "price": 1490,
       "type": "drinkables"
     },
@@ -19,7 +19,7 @@
       "id": "b3",
       "title": "Capuccino",
       "description": "Café, leche y espuma.",
-      "image": "../images/menu/bebestibles/capuccino.png",
+      "image": "https://firebasestorage.googleapis.com/v0/b/miau-cofee.appspot.com/o/bebestibles%2Fcapuccino.png?alt=media&token=c33a9cfc-bb54-4745-acb4-bb2d477a76e3",
       "price": 1490,
       "type": "drinkables"
     },
@@ -27,7 +27,7 @@
       "id": "b4",
       "title": "Americano",
       "description": "Café sólo",
-      "image": "../images/menu/bebestibles/americano.png",
+      "image": "https://firebasestorage.googleapis.com/v0/b/miau-cofee.appspot.com/o/bebestibles%2Famericano.png?alt=media&token=8eff5f4d-24d3-46b2-89a0-d7ae17c09bf3",
       "price": 990,
       "type": "drinkables"
     },

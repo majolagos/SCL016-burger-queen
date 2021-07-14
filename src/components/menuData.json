@@ -1,0 +1,95 @@
+[
+    {
+      "id": "b1",
+      "title": "Espresso",
+      "description": "Shot de café",
+      "image": "https://firebasestorage.googleapis.com/v0/b/miau-cofee.appspot.com/o/bebestibles%2Fespresso.png?alt=media&token=3becd624-7661-4c2b-9a1a-6122d2ba41e8",
+      "price": 990,
+      "type": "drinkables"
+    },
+    {
+      "id": "b2",
+      "title": "Latte",
+      "description": "Café, leche, espuma y sabor a elección.",
+      "image": "https://firebasestorage.googleapis.com/v0/b/miau-cofee.appspot.com/o/bebestibles%2Flatte.png?alt=media&token=963b2c8c-3e78-450c-b342-24ad68c63f19",
+      "price": 1490,
+      "type": "drinkables"
+    },
+    {
+      "id": "b3",
+      "title": "Capuccino",
+      "description": "Café, leche y espuma.",
+      "image": "https://firebasestorage.googleapis.com/v0/b/miau-cofee.appspot.com/o/bebestibles%2Fcapuccino.png?alt=media&token=c33a9cfc-bb54-4745-acb4-bb2d477a76e3",
+      "price": 1490,
+      "type": "drinkables"
+    },
+    {
+      "id": "b4",
+      "title": "Americano",
+      "description": "Café sólo",
+      "image": "https://firebasestorage.googleapis.com/v0/b/miau-cofee.appspot.com/o/bebestibles%2Famericano.png?alt=media&token=8eff5f4d-24d3-46b2-89a0-d7ae17c09bf3",
+      "price": 990,
+      "type": "drinkables"
+    },
+    {
+      "id": "s1",
+      "title": "Aliado jamón queso",
+      "description": "Sándwich miga o croissant relleno con jamón o jamón de pavo y queso fundido.",
+      "image": "../images/menu/salado/aliado-jamon-queso.png",
+      "price": 990,
+      "type": "salty"
+    }, {
+      "id": "s2",
+      "title": "Sándwich ave palta",
+      "description": "Láminas de pollo a la plancha, palta y mayonesa en pan de miga italiano.",
+      "image": "../images/menu/salado/ave-palta.png",
+      "price": 1490,
+      "type": "salty"
+    }, {
+      "id": "s3",
+      "title": "Sándwich pollo italiano",
+      "description": "Sándwich láminas de pechuga de pollo, trozos de tomate, palta y un toque de mayonesa en pan ciabatta.",
+      "image": "../images/menu/salado/pollo-italiano.png",
+      "price": 1490,
+      "type": "salty"
+    }, {
+      "id": "s4",
+      "title": "Salmón Rúcula",
+      "description": "Sándwich con láminas de salmón ahumado, queso crema, palta, rúcula y berros en pan ciabatta.",
+      "image": "../images/menu/salado/salmon-rucula.png",
+      "price": 1990,
+      "type": "salty"
+    },
+    {
+      "id": "d1",
+      "title": "Trozo de torta",
+      "description": "Bizcocho y relleno según disponibilidad.",
+      "image": "../images/menu/dulce/trozo-torta.png",
+      "price": 1490,
+      "type": "sweet"
+    }, {
+      "id": "d2",
+      "title": "Trozo de Kuchen",
+      "description": "Masa y relleno según disponibilidad.",
+      "image": "../images/menu/dulce/trozo-kuchen.png",
+      "price": 1490,
+      "type": "sweet"
+    }, {
+      "id": "d3",
+      "title": "Trozo de Cheesecake",
+      "description": "Tarta de queso con cobertura según disponibilidad.",
+      "image": "../images/menu/dulce/trozo-cheesecake.png",
+      "price": 1490,
+      "type": "sweet"
+    }, {
+      "id": "d4",
+      "title": "Muffin",
+      "description": "Bizchocho relleno, sabor según disponibilidad.",
+      "image": "../images/menu/dulce/mufin.png",
+      "price": 990,
+      "type": "sweet"
+    }
+
+    
+  ]
+        

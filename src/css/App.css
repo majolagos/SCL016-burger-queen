@@ -1,0 +1,30 @@
+.bg-primary {
+  background-color: #FFEBE4 !important;
+  border-style: none;
+  border-radius: 0rem;
+}
+
+.bg-pink {
+  background-color: #FB7782 !important;
+  border-style: none;
+  border-radius: 0rem;
+}
+
+.btn-primary,
+.btn-primary:hover {
+  background-color: #FFDCCC !important;
+  border-style: none;
+  border-radius: 0rem;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: #FB7782 !important;
+  border: none;
+  box-shadow: none;
+  border-style: none;
+}
+
+
+
+

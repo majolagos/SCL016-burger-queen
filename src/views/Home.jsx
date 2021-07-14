@@ -15,6 +15,7 @@ const initDay =  (e) =>{
       return
   }
   setName(waiter);
+  console.log(name);
   props.history.push('/mesas')
 }
     return (

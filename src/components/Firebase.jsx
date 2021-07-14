@@ -4,7 +4,6 @@ import "moment/locale/es";
 
 const db = firebase.firestore();
 const today = new Date();
-let id = "";
 
 const getDataTables = async () => {
   const data = await db.collection("mesas").get();
@@ -25,29 +24,29 @@ const getDataOrders = async () => {
 const saveDataOrder = async (dataOrder) => {
   try {
     const newOrder = {
-      garzona: dataOrder.waiter,
-      mesa: dataOrder.table,
-      nombreCliente: dataOrder.customer,
-      fecha: moment(today).format('LL'),
-      estado: 'Ingresado',
-      productos: dataOrder.productList,
+      waiter: dataOrder.waiter,
+      table: dataOrder.table,
+      customer: dataOrder.customer,
+      date: moment(today).format('LL'),
+      state: 'Ingresado',
+      products: dataOrder.productList,
       total: dataOrder.total
     };
 
     await db.collection("pedidos").add(newOrder);
-    const order = getDataOrders().then((data) => {
-      return data.filter(
-        (order) =>
-          order.garzona === dataOrder.waiter &&
-          order.fecha === moment(today).format("LL") &&
-          order.nombreCliente === dataOrder.customerName
-      );
-    });
+    // const order = getDataOrders().then((data) => {
+    //   return data.filter(
+    //     (order) =>
+    //       order.garzona === dataOrder.waiter &&
+    //       order.fecha === moment(today).format("LL") &&
+    //       order.nombreCliente === dataOrder.customerName
+    //   );
+    // });
 
-    order.then((item) => {
-      id = item[0].id;
-      return console.log(id);
-    });
+    // order.then((item) => {
+    //   id = item[0].id;
+    //   return console.log(id);
+    // });
   } catch (error) {
     console.log(error);
   }

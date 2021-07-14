@@ -64,13 +64,16 @@ const Tables = (props) => {
 
   const initOrder = (e) => {
     e.preventDefault();
-    
+     if (!customerName.trim()) {
+       console.log("Ingresa el cliente");
+       return;
+     }
     setOrder({
       waiter: waiter,
       customer: customerName,
       table: tableSelected
     })
-
+console.log(order);
     props.history.push("/menu");
   };
 

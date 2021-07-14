@@ -10,15 +10,12 @@ import UserContext from './context/userContext';
 import DataOrderContext from "./context/dataOrderContext";
 
 function App() {
-  const [waiter, setWaiter] = useState(null)
-  const setName = (value) => {
-    setWaiter(value);
-  };
+  const [waiter, setName] = useState(null)
+  // const setName = (value) => {
+  //   setWaiter(value);
+  // };
 
   const [order, setOrder] = useState(null)
-  const setOrderData = (value) =>{
-    setOrder(value)
-  }
   return (
     <UserContext.Provider value={{waiter, setName}}>
       <DataOrderContext.Provider value={{order, setOrder}}>

@@ -3,11 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import "../css/App.css";
 import logo from "../images/logo.png";
 import userContext from "../context/userContext";
+import moment from "moment";
+import 'moment/locale/es'
 
 const Navbar = () => {
 
   const today = new Date();
-  const date = today.getUTCDate() + "/" + (today.getMonth()+1) + "/" + today.getFullYear(); //+' '+ today.getHours()+':'+today.getMinutes()
   const {waiter} = useContext(userContext);
   return (
     
@@ -44,8 +45,8 @@ const Navbar = () => {
             </div>
           </div>
           <div className="col-md-3">
-            <div className="navbar-brand bg-primary text-dark mr-2 disabled">
-              {date} -
+            <div className="navbar-brand bg-primary text-dark disabled">
+              {moment(today).format('L')} -
               {waiter}
             </div>
           </div>

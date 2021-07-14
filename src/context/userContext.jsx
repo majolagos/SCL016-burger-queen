@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 const userContext = createContext({
     name: null,
-    updateName: () => {}
+    // setName: () => {}
 })
 
 export default userContext;

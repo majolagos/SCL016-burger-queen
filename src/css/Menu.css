@@ -5,3 +5,20 @@
 h6{
     font-size: 6rem !important;
 }
+
+.centrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.padding-bs-2{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2px;
+}
+
+.txt-menu{
+    font-size: 12rem;
+}

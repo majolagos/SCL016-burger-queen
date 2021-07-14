@@ -7,14 +7,21 @@ import Orders from "./views/Orders";
 import Payments from "./views/Payments";
 import Navbar from "./views/Navbar";
 import UserContext from './context/userContext';
+import DataOrderContext from "./context/dataOrderContext";
 
 function App() {
   const [waiter, setWaiter] = useState(null)
-  const updateName = (value) => {
+  const setName = (value) => {
     setWaiter(value);
   };
+
+  const [order, setOrder] = useState(null)
+  const setOrderData = (value) =>{
+    setOrder(value)
+  }
   return (
-    <UserContext.Provider value={{waiter, updateName}}>
+    <UserContext.Provider value={{waiter, setName}}>
+      <DataOrderContext.Provider value={{order, setOrder}}>
     <Router>
         <Navbar/>
         <Switch>
@@ -35,6 +42,7 @@ function App() {
           </Route>
         </Switch>
     </Router>
+    </DataOrderContext.Provider>
   </UserContext.Provider>
   );
 }

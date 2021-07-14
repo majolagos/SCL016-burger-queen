@@ -1,29 +1,29 @@
-import React, {Fragment, useState, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import logo2 from '../images/logo2.svg';
 import userContext from '../context/userContext';
+import { withRouter } from 'react-router';
 
-const Home = () => {
+const Home = (props) => { //componente de funcion
 
 const [waiter, setWaiter] = useState('');
-const {name, updateName} = useContext(userContext); 
-console.log(name);
+const {name, setName} = useContext(userContext);
 
-const initDay = (e) =>{
+const initDay =  (e) =>{ 
   e.preventDefault();
   if(!waiter.trim()){
       console.log('Ingresa un usuario')
       return
   }
-  updateName(waiter);
-  //cambiar la ruta para ir a mesas
+  setName(waiter);
+  props.history.push('/mesas')
 }
     return (
-      <Fragment>
-        <div className="row mx-auto vh-100">
-          <div className="col-md-9 mt-4">
+     
+        <main className="row mx-auto vh-100">
+          <section className="col-md-9 mt-4">
             <img src={logo2} alt="logo" />
-          </div>
-          <div className="col-md-3 bg-primary">
+          </section>
+          <section className="col-md-3 bg-primary">
             <form onSubmit={initDay} className="text-center">
               <input
                 type="text"
@@ -37,10 +37,10 @@ const initDay = (e) =>{
                 Iniciar
               </button>
             </form>
-          </div>
-        </div>
-      </Fragment>
+          </section>
+        </main>
+
     );
 }
 
-export default Home;
+export default withRouter(Home);

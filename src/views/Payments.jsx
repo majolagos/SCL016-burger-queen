@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
 const Payments = () => {
     return (
-      <div>
+      <Fragment>
         <h2> Pagos</h2>
-      </div>
+      </Fragment>
     );
 }
 

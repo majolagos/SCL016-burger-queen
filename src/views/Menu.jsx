@@ -1,24 +1,25 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useContext } from "react";
 import data from "../components/menuData.json";
+import dataOrderContext from "../context/dataOrderContext";
+import { saveDataOrder } from "../components/Firebase";
 
 const Menu = () => {
-  const [arrayMenu, setArrayMenu] = useState([]); //los productos filtrados que mostrare en el main
   const [dataMenu, setDataMenu] = useState([]); //todos los productos sin filtrar
-  const [listadoProductos, setListadoProductos] = useState([]); //productos añadidos a la comanda
+  const [arrayMenu, setArrayMenu] = useState([]); //los productos filtrados que mostraré en el main
+  const [productList, setProductList] = useState([]); //productos añadidos a la comanda
   const [total, setTotal] = useState();
+  const { order } = useContext(dataOrderContext);
 
   useEffect(() => {
     const getMenu = () => {
       setDataMenu(data);
     };
-
     getMenu();
   }, []);
 
   const agregarProductos = (item) => {
-
-    if (listadoProductos.length === 0) {
-      setListadoProductos([
+    if (productList.length === 0) {
+      setProductList([
         {
           id: item.id,
           title: item.title,
@@ -31,34 +32,32 @@ const Menu = () => {
         },
       ]);
 
-      setTotal(item.price)
+      setTotal(item.price);
     } else {
       //existe el producto en la lista?
-      const foundProduct = listadoProductos.find(
+      const foundProduct = productList.find(
         (element) => element.id === item.id
       );
 
       if (foundProduct) {
         //actualizo  la cantidad
-        const arrayProduct = listadoProductos.map((element) => {
+        const arrayProduct = productList.map((element) => {
           if (element.id === item.id) {
             element.quantity++;
-            element.subtotal = element.quantity * element.price
-            setTotal(total+element.subtotal);
+            element.subtotal = element.quantity * element.price;
+            setTotal(total + element.price);
             return element;
           }
-
           return element;
         });
 
-        //actualizo el listado de productos      
-        console.log(arrayProduct);  
-        setListadoProductos(arrayProduct);
-
+        //actualizo el listado de productos
+        console.log(arrayProduct);
+        setProductList(arrayProduct);
       } else {
         //añado el producto a la lista
-        setListadoProductos([
-          ...listadoProductos,
+        setProductList([
+          ...productList,
           {
             id: item.id,
             title: item.title,
@@ -70,7 +69,7 @@ const Menu = () => {
             subtotal: item.price,
           },
         ]);
-        setTotal(total+item.price);
+        setTotal(total + item.price);
       }
     }
   };
@@ -78,51 +77,41 @@ const Menu = () => {
   const initOrder = (e) => {
     e.preventDefault();
 
-    console.log(listadoProductos);
+    const waiter = order.waiter;
+    const table = order.table;
+    const customer = order.table;
+    const dataOrder = { waiter, table, customer, total, productList };
+    saveDataOrder(dataOrder);
   };
 
   const selectMenu = (option) => {
-    switch (option) {
-      case "dulce":
-        setArrayMenu(dataMenu.filter((item) => item.type === "sweet"));
-        console.log("cargo menu dulce");
-        break;
-      case "salado":
-        setArrayMenu(dataMenu.filter((item) => item.type === "salty"));
-        console.log("cargo menu salado");
-        break;
-      case "bebestibles":
-        setArrayMenu(dataMenu.filter((item) => item.type === "drinkables"));
-        console.log("cargo menu bebestibles");
-        break;
-      default:
-        console.log("error");
-    }
+    setArrayMenu(dataMenu.filter((item) => item.type === option));
   };
+
   return (
     <Fragment>
-      <div className="row mx-auto vh-100">
-        <div className="col-md-3 mx-auto text-center bg-primary">
+      <main className="row mx-auto vh-100">
+        <section className="col-md-3 mx-auto text-center bg-primary">
           <button
             className="btn btn-pink-light mt-4 mr-5 ml-4"
-            onClick={() => selectMenu("salado")}
+            onClick={() => selectMenu("salty")}
           >
             Salado
           </button>
           <button
             className="btn btn-pink-light mt-3 mr-5 ml-3"
-            onClick={() => selectMenu("dulce")}
+            onClick={() => selectMenu("sweet")}
           >
             Dulce
           </button>
           <button
             className="btn btn-pink-light mt-3 mr-5 ml-4"
-            onClick={() => selectMenu("bebestibles")}
+            onClick={() => selectMenu("drinkables")}
           >
             Bebestible
           </button>
-        </div>
-        <div className="col-md-6 mt-4">
+        </section>
+        <section className="col-md-6 mt-4">
           <div className="row">
             <div className="col-md-12">
               <div className="row">
@@ -149,14 +138,14 @@ const Menu = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="col-md-3 bg-primary">
+        </section>
+        <section className="col-md-3 bg-primary">
           {" "}
           {/* Componente comanda y props */}
           <form className="text-center mt-3" onSubmit={(e) => initOrder(e)}>
             <h4>Pedido</h4>
             <ul className="list-group">
-              {listadoProductos.map((item, index) => (
+              {productList.map((item, index) => (
                 <li
                   key={index}
                   className="list-group-item d-flex justify-content-between align-items-center"
@@ -176,8 +165,8 @@ const Menu = () => {
               Ingresar Pedido
             </button>
           </form>
-        </div>
-      </div>
+        </section>
+      </main>
     </Fragment>
   );
 };

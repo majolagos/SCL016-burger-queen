@@ -17,7 +17,7 @@ const Menu = () => {
     getMenu();
   }, []);
 
-  const agregarProductos = (item) => {
+  const addProduct = (item) => {
     if (productList.length === 0) {
       setProductList([
         {
@@ -50,7 +50,6 @@ const Menu = () => {
           }
           return element;
         });
-
         //actualizo el listado de productos
         console.log(arrayProduct);
         setProductList(arrayProduct);
@@ -128,7 +127,7 @@ const Menu = () => {
                       </p>
                       <button
                         className="btn btn-info float-right mb-2"
-                        onClick={() => agregarProductos(item)}
+                        onClick={() => addProduct(item)}
                       >
                         +
                       </button>
@@ -140,12 +139,13 @@ const Menu = () => {
           </div>
         </section>
         <section className="col-md-3 bg-primary">
-          {" "}
           {/* Componente comanda y props */}
           <form className="text-center mt-3" onSubmit={(e) => initOrder(e)}>
             <h4>Pedido</h4>
             <ul className="list-group">
+
               {productList.map((item, index) => (
+
                 <li
                   key={index}
                   className="list-group-item d-flex justify-content-between align-items-center"

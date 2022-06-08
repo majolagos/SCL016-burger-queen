@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState, useContext } from "react";
-import {  getDataTables,  getDataOrders} from "../components/Firebase";
+import { getDataTables, getDataOrders } from "../components/Firebase";
 import userContext from "../context/userContext";
 import dataOrderContext from "../context/dataOrderContext";
 import "../css/Tables.css";
@@ -19,9 +19,7 @@ const Tables = (props) => {
   useEffect(() => {
     const getTables = () => {
       try {
-        //esto deberia traerlo de un componente
-
-        getDataTables().then((data) => {
+          getDataTables().then((data) => {
           setOnePerson(data.filter((item) => item.capacidad === 1));
           setTwoPersons(data.filter((item) => item.capacidad === 2));
           setFourPersons(data.filter((item) => item.capacidad === 4));
@@ -34,7 +32,7 @@ const Tables = (props) => {
 
     const loopOrders = () => {
       try {
-        getDataOrders().then((data) => {
+          getDataOrders().then((data) => {
           setArrayOrder(data.filter((item) => item.estado !== "Completado"));
         });
       } catch (error) {
@@ -64,16 +62,16 @@ const Tables = (props) => {
 
   const initOrder = (e) => {
     e.preventDefault();
-     if (!customerName.trim()) {
-       console.log("Ingresa el cliente");
-       return;
-     }
+    if (!customerName.trim()) {
+      console.log("Ingresa el cliente");
+      return;
+    }
     setOrder({
       waiter: waiter,
       customer: customerName,
-      table: tableSelected
-    })
-console.log(order);
+      table: tableSelected,
+    });
+    console.log(order);
     props.history.push("/menu");
   };
 

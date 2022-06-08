@@ -14,7 +14,6 @@ function App() {
   // const setName = (value) => {
   //   setWaiter(value);
   // };
-
   const [order, setOrder] = useState(null)
   return (
     <UserContext.Provider value={{waiter, setName}}>
@@ -23,7 +22,7 @@ function App() {
         <Navbar/>
         <Switch>
           <Route path="/mesas">
-            <Tables />
+            <Tables/>
           </Route>
           <Route path="/menu">
             <Menu />
